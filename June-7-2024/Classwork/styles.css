@@ -1,0 +1,32 @@
+body {
+    background-color: rgba(229, 154, 252, 0.411);
+}
+
+.container {
+    background-color: rgba(6, 82, 74, 0.411);
+    width: auto;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 7px;
+    backdrop-filter: blur(2px);
+    backdrop-filter:  saturate(0.1);
+}
+
+.heading, .subheading {
+    text-align: left;
+    color: rgb(153, 98, 198);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;.
+}
+
+.subheading {
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.date {
+    align-content: center;
+    color: blue;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

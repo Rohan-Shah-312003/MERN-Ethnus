@@ -1,0 +1,47 @@
+body {
+  background-color: ivory;
+  color: rgb(91, 91, 217);
+}
+
+h2 {
+  font-family: cursive;
+}
+
+.container {
+  overflow: auto;
+  background-color: rgba(61, 7, 92, 0.411);
+  width: auto;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 7px;
+  backdrop-filter: blur(2px);
+  backdrop-filter: saturate(0.1);
+}
+table {
+  font-family: sans-serif;
+  border: 2px solid black;
+  width: 100%;
+}
+
+table tr th {
+  border: 2px solid black;
+}
+tr:nth-child(even) {
+  background-color: rgba(91, 91, 217, 0.411);
+}
+
+tr:hover {
+  background-color: aqua;
+  cursor: pointer;
+}
+
+.box-models {
+  border-style: dashed;
+  border-width: 4px;
+  border-color: aqua;
+  border-radius: 10px;
+  background-color: rgba(91, 91, 217, 0.411);
+  padding: 10px;
+  margin: 10px;
+  width: 75%;
+}
