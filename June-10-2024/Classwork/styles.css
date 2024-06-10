@@ -20,11 +20,13 @@ h2 {
 table {
   font-family: sans-serif;
   border: 2px solid black;
-  width: 100%;
+  border-radius: 5px;
+  width: 75%;
 }
 
 table tr th {
   border: 2px solid black;
+  border-radius: 2px;
 }
 tr:nth-child(even) {
   background-color: rgba(91, 91, 217, 0.411);
@@ -44,4 +46,24 @@ tr:hover {
   padding: 10px;
   margin: 10px;
   width: 75%;
+}
+
+.css-display {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.css-display p {
+  border: 2px solid black;
+}
+
+.css-positions {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.css-positions p {
+  position: relative;
+  right: 40%;
+  border: 2px solid black;
 }
