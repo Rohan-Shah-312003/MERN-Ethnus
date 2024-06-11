@@ -1,0 +1,299 @@
+body {
+  background-color: #252525;
+  overflow: auto;
+}
+
+h1 {
+  color: #fffff0;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+hr {
+  color: ivory;
+}
+
+.task {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+/* task 1 */
+
+.task1-table1 {
+  background-color: aqua;
+  border-collapse: separate !important;
+  border: 2px solid ivory;
+  border-radius: 12px;
+}
+
+.task1-table1 tr td,
+.task1-table1 tr th {
+  text-align: center;
+  border: 2px solid ivory;
+  border-radius: 12px;
+}
+
+.task1-table2 {
+  border-collapse: separate !important;
+}
+.task1-table2 tr td {
+  text-align: center;
+  border: 2px solid greenyellow;
+  padding: 20px;
+}
+
+/* Task 2 */
+
+.v-nav-bar {
+  border-radius: 12px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: inline-flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.v-nav-bar li a {
+  display: block;
+  color: blue;
+  text-decoration: none;
+  padding: 5px;
+  background-color: skyblue;
+}
+
+.v-nav-bar li a:hover {
+  background-color: blue;
+  color: white;
+}
+
+nav .h-nav-bar {
+  padding-top: 50px;
+}
+
+.h-nav-bar {
+  border-radius: 12px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: inline-flex;
+  width: 200px;
+}
+
+.h-nav-bar li a {
+  display: block;
+  color: blue;
+  text-decoration: none;
+  padding: 5px;
+  background-color: white;
+  border: 2px solid blue;
+}
+
+.h-nav-bar li a:hover {
+  background-color: blue;
+  color: white;
+}
+
+/* task 3 */
+
+.task3-table1 {
+  border-collapse: separate !important;
+}
+
+.task3-table1 tr th {
+  text-align: center;
+  background-color: rgb(61, 241, 88);
+  padding: 20px;
+  color: white;
+}
+
+.task3-table1 {
+  tr:nth-child(even) {
+    background-color: grey;
+  }
+  tr:nth-child(odd) {
+    background-color: ivory;
+  }
+}
+
+.task3-table1 tr td {
+  text-align: center;
+  padding: 20px;
+}
+
+/* task 4 */
+
+.v-nav-bar2 {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: inline-flex;
+  flex-direction: column;
+  width: 200px;
+  border-radius: 0 5px 5px 0;
+  color: ivory;
+}
+
+.v-nav-bar2 li a {
+  border-radius: 12px;
+  display: block;
+  color: blue;
+  text-decoration: none;
+  padding: 20px;
+  background-color: skyblue;
+  position: relative;
+  left: -80%;
+  transition: 0.5s;
+}
+
+.v-nav-bar2 li a:hover {
+  left: 0;
+  color: white;
+}
+
+/* task 5 */
+
+.v-nav-bar3 {
+  border-radius: 12px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: inline-flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.v-nav-bar3 li a {
+  display: block;
+  color: blue;
+  text-decoration: none;
+  padding: 5px;
+  background-color: skyblue;
+}
+
+.v-nav-bar3 li a:hover {
+  background-color: blue;
+  color: white;
+}
+
+.task5-col {
+  background-color: rgba(61, 241, 88, 0.562);
+  filter: blur(4px);
+  filter: saturate(0.001);
+  border-radius: 12px;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  font-family: cursive;
+  color: ivory;
+}
+
+/* task 6 */
+.form {
+  display: inline;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(57, 57, 122, 0.562);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 12px;
+  padding: 20px;
+  color: white;
+}
+
+.avatar-img {
+  display: block;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label {
+  color: ivory;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 5px;
+}
+
+.btn {
+  background-color: #345cb8;
+  color: ivory;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #213a74;
+  color: ivory;
+}
+
+.cancel {
+  width: 80px;
+  background-color: #b83434e0;
+}
+
+.cancel:hover {
+  background-color: #6e1f1fe0;
+  color: ivory;
+}
+
+.form-group input {
+  height: 50px;
+  border: none;
+  border-radius: 7px;
+  font-size: 18px;
+  color: ivory;
+  background-color: #4c58756d;
+}
+
+.form-group input:enabled {
+  background-color: #8c99b76d;
+}
+
+.forgot-password {
+  color: ivory;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 15px;
+  display: block;
+}
+
+/* task 7 */
+
+.container7 {
+  background-color: rgba(39, 5, 140, 0.623);
+  border-radius: 12px;
+}
+
+.task-7-form {
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(57, 57, 122, 0.562);
+  margin: auto;
+  border-radius: 12px;
+  padding: 20px;
+  color: white;
+  width: 75%;
+}
+
+p.gender {
+  display: flex;
+  font-size: px;
+  align-items: center;
+  padding: 5px;
+  margin-right: 5px;
+}
