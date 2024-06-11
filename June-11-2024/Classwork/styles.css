@@ -1,0 +1,48 @@
+body {
+  background-color: ivory;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-decoration: underline;
+}
+
+.personal-container {
+  overflow: auto;
+  background-color: rgba(61, 7, 92, 0.411);
+  width: auto;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 7px;
+  backdrop-filter: blur(2px);
+  backdrop-filter: saturate(0.1);
+}
+
+.heading,
+.date {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  color: rgb(148, 64, 123);
+}
+
+.grids .container-fluid .row .col {
+  background-color: rgba(61, 7, 92, 0.411);
+  margin: 2px;
+  /*padding: 5px;*/
+  border-radius: 1px;
+  backdrop-filter: blur(2px);
+  backdrop-filter: saturate(0.1);
+}
+
+.grids .container-fluid .row div {
+  background-color: rgba(92, 7, 33, 0.411);
+  margin: 2px;
+  /*padding: 5px;*/
+  border-radius: 1px;
+  backdrop-filter: blur(2px);
+  backdrop-filter: saturate(0.1);
+}
