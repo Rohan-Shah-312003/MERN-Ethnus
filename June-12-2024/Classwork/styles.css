@@ -1,0 +1,63 @@
+body {
+  background-color: ivory;
+}
+
+.container {
+  background-color: rgba(61, 7, 92, 0.411);
+  width: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 5px;
+  border: 2px solid rgba(61, 7, 92, 0.411);
+  border-radius: 7px;
+}
+
+.date,
+.day,
+.heading {
+  font-family: cursive;
+  font-weight: bold;
+  color: rgb(148, 64, 123);
+  text-align: center;
+  text-decoration: underline;
+}
+
+.submit-btn,
+.personal-btn {
+  background-color: rgba(148, 64, 123, 0.708);
+  color: ivory;
+  font-family: cursive;
+  font-weight: bold;
+  border-radius: 7px;
+  border: 2px solid rgba(148, 64, 123, 0.269);
+  margin-top: 10px;
+}
+
+.submit-btn:hover,
+.personal-btn:hover {
+  background-color: rgb(148, 64, 123);
+  color: ivory;
+}
+
+.card-background {
+  background-color: rgba(55, 13, 94, 0.516);
+  background-image: url("background.jpg");
+  border-radius: 7px;
+  border: 2px solid rgba(55, 13, 94, 0.516);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.card {
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+}
+
+.card-body {
+  color: ivory;
+  font-family: cursive;
+  font-weight: bold;
+  border-radius: 7px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
