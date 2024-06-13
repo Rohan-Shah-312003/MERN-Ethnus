@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 6</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h4 class="date">13-06-2024</h4>
+      </div>
+      <div class="col">
+        <h4 class="day">Day 6</h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <h3 class="heading">Part 1 - Internal JavaScript</h3>
+      <h4>JavaScript Internal Way</h4>
+      <p id="demo">JavaScript can modify text</p>
+      <button type="button" onclick="document.getElementById('demo').innerHTML='JavaScript-Internal'">Click</button>
+    </div>
+    <hr>
+    <div class="row">
+      <h3>Part 2 - External JavaScript</h3>
+      <h4>JavaScript External Way</h4>
+      <p id="demo1">JavaScript can modify text</p>
+      <button type="button" onclick="external()">Click</button>
+    </div>
+    <hr>
+    <div class="row">
+      <h3>Part 3 - Display Methods</h3>
+
+      <h4>Using Inner HTML</h4>
+      <p id="method1"></p>
+      <script>
+        document.getElementById('method1').innerHTML = '45-12';
+      </script>
+
+
+      <h4>Using write</h4>
+      <script>
+        document.write('writing on the document');
+      </script>
+
+      <!--<h4>Using alert</h4>
+      <script>
+        window.alert('Hellooo!!');
+      </script>-->
+
+      <h4>Using console</h4>
+
+      <script>
+        console.log('Hellooo!!');
+      </script>
+
+      <input type="text" id="i1">
+      <button type="button" onclick="f1()">Submit</button>
+      <p id="i11"></p>
+      <script>
+        function f1() {
+          var s = document.getElementById('i1').value;
+          document.getElementById('i11').innerHTML = s + "";
+        }
+      </script>
+
+      <button type="button" onclick="f2()">Prompt</button>
+      <p id="i111"></p>
+      <script>
+        function f2() {
+          var s = prompt('Enter your name');
+          document.getElementById('i111').innerHTML = s + "";
+        }
+      </script>
+
+      <hr>
+
+      <h4>JavaScript variables</h4>
+      <p> var => GLobal Variable -> Accessible throughout the code</p>
+      <p>let => Local Variable -> Accessible within the block</p>
+      <p>const => Constant Variable -> Accessible within the block</p>
+      <script>
+        var a = 10;
+        var b = 'Global';
+        var c = true;
+        document.writeln('Hello <br>');
+        document.write('Hello ');
+
+        function f3() {
+          document.write('<br>', a);
+        }
+        f3();
+      </script>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

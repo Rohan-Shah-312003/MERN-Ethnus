@@ -1,0 +1,65 @@
+body {
+  background-color: ivory;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: lighter;
+  color: rgba(50, 20, 77, 0.872);
+}
+
+.main-body {
+  background-color: rgba(61, 7, 92, 0.411);
+  width: auto;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 5px;
+  border-radius: 7px;
+  text-align: center;
+}
+
+.task-table {
+  margin: auto;
+  border-collapse: separate !important;
+  padding: 20px;
+  background-color: rgba(61, 7, 92, 0.411);
+  tr th,
+  tr td {
+    border: 2px solid rgba(61, 7, 92, 0.411);
+    padding: 5px;
+    border-radius: 6px;
+    background-color: rgba(225, 200, 240, 0.411);
+    cursor: pointer;
+  }
+  border: 2px solid rgba(61, 7, 92, 0.411);
+  border-radius: 7px;
+
+  tr td a,
+  tr td {
+    color: rgb(27, 4, 40);
+    text-decoration: none;
+  }
+
+  tr td a:hover {
+    color: rgb(27, 4, 40);
+    text-decoration: underline;
+  }
+  tr td:hover {
+    background-color: rgba(36, 15, 48, 0.411);
+  }
+}
+
+caption {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: lighter;
+  color: rgba(50, 20, 77, 0.872);
+  font-size: 1.2em;
+  caption-side: top;
+  text-align: center;
+}
