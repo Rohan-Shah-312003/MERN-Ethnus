@@ -1,0 +1,31 @@
+body {
+  background-color: ivory;
+}
+
+h3 {
+  color: rgb(73, 80, 169);
+  font-family: cursive;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+h4 {
+  color: rgb(73, 80, 169);
+  font-family: cursive;
+}
+
+button {
+  border-radius: 5px;
+  color: rgb(73, 79, 169);
+  font-family: cursive;
+  font-weight: bold;
+  background-color: rgba(73, 80, 169, 0.708);
+  border-color: rgba(73, 80, 169, 0.708);
+}
+
+button:hover {
+  background-color: rgba(36, 40, 94, 0.776);
+}
+.container {
+  text-align: center;
+}
