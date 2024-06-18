@@ -12,79 +12,110 @@
 
 <body>
   <div class="container">
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.
-        </p>
+    <form action="">
+      <div class="row">
+        <div class="col">
+          <label for="firstname">First Name</label>
+        </div>
+        <div class="col">
+          <img src="" alt="">
+        </div>
+        <div class="col">
+          <input type="text" id="firstname" name="firstname" placeholder="First Name">
+        </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-      </ul>
-      <div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
+      <div class="row">
+        <div class="col">
+          <label for="lastname">Last Name</label>
+        </div>
+        <div class="col">
+          <img src="" alt="">
+        </div>
+        <div class="col">
+          <input type="text" id="lastname" name="lastname" placeholder="Last Name">
+        </div>
       </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.
-        </p>
+      <div class="row">
+        <div class="col">
+          <label for="email">E-Mail</label>
+        </div>
+        <div class="col">
+          <img src="" alt="">
+        </div>
+        <div class="col">
+          <input type="text" id="email" name="email" placeholder="E-Mail Address">
+        </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-      </ul>
-      <div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
+      <div class="row">
+        <div class="col">
+          <label for="phno">Phone #</label>
+        </div>
+        <div class="col">
+          <img src="" alt="">
+        </div>
+        <div class="col">
+          <input type="text" id="phno" name="phno" placeholder="(845)555-1212">
+        </div>
       </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.
-        </p>
+      <div class="row">
+        <div class="col">
+          <label for="address">Address</label>
+        </div>
+        <div class="col">
+          <img src="" alt="">
+        </div>
+        <div class="col">
+          <input type="text" id="address" name="address" placeholder="Address">
+        </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-      </ul>
-      <div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
+      <div class="row">
+        <div class="col">
+          <label for="city">City</label>
+        </div>
+        <div class="col">
+          <img src="" alt="">
+        </div>
+        <div class="col">
+          <input type="text" id="city" name="city" placeholder="city">
+        </div>
       </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.
-        </p>
+      <div class="row">
+        <div class="col">
+          <label for="state">State</label>
+        </div>
+        <div class="col">
+          <img src="" alt="">
+        </div>
+        <div class="col">
+          <input type="text" id="state" name="state" placeholder="Please select your state">
+        </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-      </ul>
-      <div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
+      <div class="row">
+        <div class="col">
+          <label for="hosting">Do you have hosting?</label>
+        </div>
+        <div class="col">
+          <input type="radio" id="hosting" name="yes">
+          <label for="yes">Yes</label>
+          <br>
+          <input type="radio" id="hosting" name="no">
+          <label for="no">No</label>
+        </div>
       </div>
-    </div>
-
+      <div class="row">
+        <div class="col">
+          <label for="desc">Project Description</label>
+        </div>
+        <div class="col">
+          <textarea name="desc" id="desc" cols="30" rows="2"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button type="button" class="btn btn-default">Submit</button>
+        </div>
+      </div>
+    </form>
   </div>
 </body>
 

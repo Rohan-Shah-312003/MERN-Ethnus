@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!--<form action="" name="form1">
+    <label for="name">Enter name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter name">
+    <input type="button" onclick="print()" value="Print value">
+  </form>
+
+  <form action="">
+    Male: <input type="radio" name="gender" value="male">
+    Female: <input type="radio" name="gender" value="female">
+
+
+
+    <input type="button" onclick="Total()" value="Total">
+  </form>
+
+  <p>Example 1</p>
+  <p>Example 2</p>
+  <p>Example 3</p>
+
+  <input type="button" onclick="count()" value="count">
+
+  <div class="Class">This is a simple implementation</div>
+
+  <form action="" name="my-form">
+    <input type="button" value="click" onclick="show()">
+    <div id="my"></div>
+  </form>-->
+  <script>
+    //    function print() {
+    //      var name = document.form1.name.value;
+    //      alert("Hello " + name);
+    //    }
+    //
+    //    function Total() {
+    //      var total = document.getElementsByName("gender");
+    //      alert(total.length);
+    //    }
+    //
+    //    function count() {
+    //      var count = document.getElementsByTagName("p");
+    //      alert(count.length);
+    //    }
+
+    //var x = document.getElementsByClassName("Class");
+    //document.write(x);
+
+    //    function show() {
+    //      var data = `Name: <input type="text" name="name" /> <br/>
+    //      <input type="button" value="Post"/>`;
+    //
+    //      document.getElementById("my").innerHTML = data;
+    //    }
+
+
+    //    function f1() {
+    //      console.log('one');
+    //    }
+    //
+    //    function f2() {
+    //      setInterval(() => {
+    //        console.log('two');
+    //      }, 3000);
+    //    }
+    //
+    //    function f3() {
+    //      console.log('three');
+    //    }
+    //
+    //    f1();
+    //    f2();
+    //    f3();
+
+
+
+    //    function f1() {
+    //      console.log('one');
+    //    }
+    //
+    //    function f2(cb) {
+    //      setTimeout(() => {
+    //        console.log('two');
+    //        cb();
+    //      }, 3000);
+    //    }
+    //
+    //    function f3() {
+    //      console.log('three');
+    //    }
+    //
+    //    f1();
+    //    f2(f3);
+
+    //function f() {
+    //  setTimeout(() => {
+    //    console.log('one');
+    //    setTimeout(() => {
+    //      console.log('two');
+    //      setTimeout(() => {
+    //        console.log('three');
+    //      }, 2000);
+    //    }, 4000);
+    //  }, 6000);
+    //}
+    //f();
+
+    //    function req(args, cb) {
+    //      if (!args) {
+    //        return cb(new Error("Something went wrong!"));
+    //      }
+    //      else {
+    //        return setTimeout(() => {
+    //          cb(null, { body: args + " " + Math.floor(Math.random() * 10) });
+    //        }, 500);
+    //      }
+    //
+    //    }
+
+    //    function cb() {
+    //      req("First", function first(error, response) {
+    //        if (error) {
+    //          console.log(error);
+    //          return;
+    //        }
+    //        console.log(response.body);
+    //
+    //        req(null, function second(error, response) {
+    //          if (error) {
+    //            console.log(error);
+    //            return;
+    //          }
+    //          console.log(response.body);
+    //        });
+    //      });
+    //    }
+    //    cb();
+
+    //const p = new Promise((resolve, reject) => {
+    //  resolve("Issue is resolved");
+    //});
+    //p.then((msg) => console.log(msg));
+
+    //const p = new Promise((resolve, reject) => {
+    //  reject("Issue is unresolved");
+    //});
+    //p.catch((err) => console.log(err));
+
+    //const p = new Promise((resolve, reject) => {
+    //  resolve("Completed");
+    //  reject("Failed");
+    //});
+    //p.then((msg) => console.log(msg)).catch((err) => console.log(err));
+
+    //const p = new Promise((res, rej) => {
+    //  res("Completed");
+    //});
+    //p.then((msg) => {
+    //  return "Successfully" + msg;
+    //})
+    //  .then((msg) => new Promise((res, rej) => {
+    //    rej("New problem arised!");
+    //  }))
+    //  .then((msg) => console.log(msg))
+    //  .catch((err) => console.log(err));
+
+    //fetch("https://jsonplaceholder.typicode.com/users")
+    //  .then((res) => {
+    //    return res.json();
+    //  })
+    //  .then((res) => console.log(res))
+    //  .catch((err) => console.log("Error:" + err));
+
+    //fetch("NOTWORKINGURL")
+    //  .then((res) => {
+    //    return res.json();
+    //  })
+    //  .then((res) => console.log(res))
+    //  .catch((err) => console.log("Error:" + err));
+
+    //async function f1() {
+    //  return {};
+    //}
+    //console.log(f1().then((res) => console.log(res)));
+
+    //    async function f2() {
+    //      const rec = await fetch("https://jsonplaceholder.typicode.com/users");
+    //      const data = rec.json();
+    //      console.log(data);
+    //    }
+    //
+    //    f2();
+
+//    const a1 = [1, 2, 3];
+//    const a2 = [4, 5, 6];
+//    const a3 = [...a1, ...a2];
+//    console.log(a3);
+//
+//    const a4 = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+//    [x, y, ...r] = a4;
+//    console.log(x);
+//    console.log(y);
+//    console.log(r);
+  </script>
+</body>
+
+</html>
