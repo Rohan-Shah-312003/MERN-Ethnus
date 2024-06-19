@@ -192,7 +192,11 @@ body {
 }
 
 .footer-element {
-  padding: 10px;
+  padding: 0.5em;
+}
+
+.footer {
+  padding-top: 2rem;
 }
 
 /* task 3 */
@@ -309,6 +313,8 @@ footer {
   }
 }
 
+/* task 4 */
+
 .card {
   border-radius: 5px;
 }
@@ -354,7 +360,98 @@ footer {
   padding-bottom: 5rem;
 }
 
-/* task 4 */
-body {
-  background-color: #252525;
+/* task 5 */
+
+.task5-form {
+  background-color: rgba(128, 128, 128, 0.573);
+  border-radius: 12px;
+  margin: 2rem;
+  padding: 20px;
+  color: black;
+  font-weight: bold;
+  .row {
+    .col {
+      display: flex;
+      align-items: center;
+      padding: 0.2rem;
+
+      input {
+        width: 15rem;
+      }
+    }
+  }
+}
+
+.form-icons {
+  width: 2rem;
+  opacity: 70%;
+  margin-right: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.66);
+  border-radius: 3px;
+  padding: 0.2rem;
+}
+
+.form-control:invalid {
+  border-color: red;
+}
+
+.form-control:valid {
+  border-color: green;
+}
+
+.error-message {
+  color: red;
+  display: none;
+}
+
+.form-control:invalid ~ .error-message {
+  display: block;
+}
+
+/* task 6 */
+
+.task6-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(128, 128, 128, 0.573);
+  border-radius: 12px;
+  margin: 2rem;
+  padding: 20px;
+  color: black;
+  font-weight: bold;
+  width: 50%;
+
+  .row {
+    label {
+      text-align: left;
+    }
+
+    .error-message {
+      display: flex;
+      justify-content: left;
+      color: red;
+      font-style: italic;
+      font-weight: lighter;
+      font-size: 0.8rem;
+    }
+
+    .form-control:invalid {
+      border-color: red;
+    }
+
+    .form-control:valid {
+      border-color: green;
+    }
+
+    .col {
+      display: flex;
+      align-items: center;
+      padding: 0.2rem;
+
+      input {
+        width: 15rem;
+      }
+    }
+  }
 }

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 3</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <form action="" class="task5-form" id="contactForm" novalidate>
+      <div class="row">
+        <div class="col">
+          <label for="FirstName" class="form-label">First Name</label>
+        </div>
+        <div class="col">
+          <img src="./assets/user.png" alt="" class="form-icons">
+          <input type="text" class="form-control" placeholder="First Name" name="FirstName" id="FirstName" required>
+          <div class="error-message">Please supply your first name</div>
+        </div>
+
+
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="LastName" class="form-label">Last Name</label>
+        </div>
+        <div class="col">
+          <img src="./assets/user.png" alt="" class="form-icons">
+          <input type=" text" class="form-control" placeholder="Last Name" name="LastName" id="LastName" required>
+          <div class="error-message">Please supply your last name</div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="email" class="form-label">E-Mail</label>
+        </div>
+        <div class="col">
+          <img src="./assets/email.png" alt="" class="form-icons">
+          <input type="email" class="form-control" placeholder="E-Mail Adress" name="email" id="email" required>
+          <div class="error-message">Please supply your email address</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="phno" class="form-label">Phone #</label>
+        </div>
+        <div class="col">
+          <img src="./assets/phone-call.png" alt="" class="form-icons">
+          <input type="number" class="form-control" placeholder="(845)555-1212" name="phno" id="phno" required>
+          <div class="error-message">Please supply your phone number</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="address" class="form-label">Address</label>
+        </div>
+        <div class="col">
+          <img src="./assets/house.png" alt="" class="form-icons">
+          <input type="text" class="form-control" placeholder="Address" name="address" id="address" required>
+          <div class="error-message">Please supply your street address</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="city" class="form-label">City</label>
+        </div>
+        <div class="col">
+          <img src="./assets/house.png" alt="" class="form-icons">
+          <input type="text" class="form-control" placeholder="City" name="city" id="city" required>
+          <div class="error-message">Please supply your city</div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="state" class="form-label">State</label>
+        </div>
+        <div class="col">
+          <img src="./assets/list.png" alt="" class="form-icons">
+          <select name="state" id="state">
+            <option value="" disable>Please select your state</option>
+            <option value="AP">AP</option>
+            <option value="WB">WB</option>
+          </select>
+          <div class="error-message">Please select your state</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="hosting" class="form-label">Do you have hosting?</label>
+        </div>
+        <div class="col" style="display: flex; flex-direction: column;">
+          <div class="form-check form-check-inline">
+            <input type="radio" name="yes" id="hosting" value="yes" required> Yes
+          </div>
+          <p><input type="radio" name="no" id="hosting" value="no" required> No </p>
+        </div>
+
+        <div class="error-message">Please select an option</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="desc" class="form-label">Project Description</label>
+        </div>
+        <div class="col">
+          <img src="./assets/pencil.png" alt="" class="form-icons">
+          <textarea name="desc" id="desc" cols="50" rows="3" placeholder="Project Description"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" style="display: flex; justify-content: center;">
+          <button type="submit" class="btn btn-default submit-button"
+            style="background-color: rgb(165, 141, 52); color:white;">Send <img src="./assets/paper-plane.png" alt=""
+              class="form-icons" style=" border: none;"></button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      let form = event.target;
+      if (form.checkValidity() === false) {
+        event.stopPropagation();
+        $(form).addClass('was-validated');
+      } else {
+        alert('Form submitted successfully!');
+      }
+    });
+  </script>
+</body>
+
+</html>

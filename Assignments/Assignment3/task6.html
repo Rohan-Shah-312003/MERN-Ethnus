@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 3</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <form action="" class="task6-form" id="contactForm" novalidate>
+      <div class="row">
+        <label for="Name" class="form-label">Name</label>
+        <input type="text" class="form-control" placeholder="Name" name="Name" id="Name" required>
+        <div class="error-message">Name is required</div>
+      </div>
+      <div class="row">
+        <label for="email" class="form-label">E-Mail</label>
+        <input type="email" class="form-control" placeholder="E-Mail Adress" name="email" id="email" required>
+        <div class="error-message">Email is required</div>
+      </div>
+
+      <div class="row">
+        <label for="pwd" class="form-label">Password</label>
+        <input type="password" class="form-control" placeholder="Password" name="pwd" id="pwd" required>
+        <div class="error-message">Name is required</div>
+      </div>
+
+      <div class="row">
+        <label for="hb" class="form-label">Hobbies</label>
+        <input type="number" class="form-control" name="hb" id="hb">
+      </div>
+      <div class="row">
+        <div class="col" style="display: flex; justify-content: center;">
+          <button type="submit" class="btn btn-default submit-button"
+            style="background-color: rgb(146, 34, 34); color:white;">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      let form = event.target;
+      if (form.checkValidity() === false) {
+        event.stopPropagation();
+        $(form).addClass('was-validated');
+      } else {
+        alert('Form submitted successfully!');
+      }
+    });
+  </script>
+</body>
+
+</html>
