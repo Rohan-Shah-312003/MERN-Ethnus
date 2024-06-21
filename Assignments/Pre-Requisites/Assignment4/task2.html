@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 2</title>
+</head>
+<form action="">
+  <p>Enter Value: <input type="text" id="input"></p>
+  <p><input type="submit" onclick="getValue()"></p>
+  <p id="givenValue"></p>
+  <p id="changedValue"></p>
+</form>
+
+<body>
+  <script>
+    function getValue() {
+      document.querySelector("form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var x = document.getElementById("input").value;
+        document.getElementById("givenValue").innerHTML = ("Given value:" + x);
+        alphabeticalOrder(x);
+      });
+
+      function alphabeticalOrder(x) {
+        var y = x.split("").sort().join("");
+
+        document.getElementById("changedValue").innerHTML = ("<br>Changed value:" + y);
+      }
+    }
+  </script>
+</body>
+
+</html>

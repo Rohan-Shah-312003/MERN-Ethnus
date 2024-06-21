@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1</title>
+</head>
+<form action="">
+  <p>Enter Value: <input type="number" id="input"></p>
+  <p><input type="submit" onclick="getValue()"></p>
+  <p id="givenValue"></p>
+  <p id="reversedValue"></p>
+</form>
+
+<body>
+  <script>
+    function getValue() {
+      document.querySelector("form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var x = document.getElementById("input").value;
+        document.getElementById("givenValue").innerHTML = ("Given value:" + x);
+        reversedNumber(x);
+      });
+
+      function reversedNumber(x) {
+        var y = x.toString();
+        y = y.split("").reverse().join("");
+        document.getElementById("reversedValue").innerHTML = ("<br>Reversed value:" + y);
+      }
+    }
+  </script>
+</body>
+
+</html>

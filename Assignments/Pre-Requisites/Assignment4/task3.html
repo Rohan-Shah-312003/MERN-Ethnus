@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 3</title>
+</head>
+<form action="">
+  <p>1st Number: <input type="number" id="input1"></p>
+  <p>2nd Number: <input type="number" id="input2"></p>
+  <input type="submit" onclick="multiply()" value="Multiply">
+  <input type="submit" onclick="divide()" value="Divide">
+  <input type="submit" onclick="reset()" value="Reset">
+  <p id="result"></p>
+</form>
+
+<body>
+  <script>
+    function multiply() {
+      document.querySelector("form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var x = document.getElementById("input1").value;
+        var y = document.getElementById("input2").value;
+        document.getElementById("result").innerHTML = ("The result is: " + x * y);
+      });
+    }
+
+    function divide() {
+      document.querySelector("form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var x = document.getElementById("input1").value;
+        var y = document.getElementById("input2").value;
+        document.getElementById("result").innerHTML = ("The result is: " + x / y);
+      });
+    }
+
+    function reset() {
+      document.querySelector("form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        document.getElementById("input1").value = null;
+        document.getElementById("input2").value = null;
+        document.getElementById("result").innerText = null;
+      });
+    }
+  </script>
+</body>
+
+</html>
