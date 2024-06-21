@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      #train {
+        width: 300px;
+        height: 100px;
+        position: relative;
+        margin: 50px auto;
+      }
+
+      #train img {
+        width: 100%;
+        height: auto;
+      }
+
+      #clouds {
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        width: 30%;
+      }
+
+      #clouds img {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .button {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 140px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .button:hover {
+        background-color: #3e8e41;
+      }
+
+      #stop {
+        background-color: #f44336;
+      }
+
+      #stop:hover {
+        background-color: #da190b;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="train">
+      <div id="clouds">
+        <img src="./assets/cloud.jpg" alt="cloud1" style="left: 0px" />
+        <img src="./assets/cloud.jpg" alt="cloud2" style="left: 100px" />
+        <img src="./assets/cloud.jpg" alt="cloud3" style="left: 200px" />
+      </div>
+      <img src="./assets/train.png" alt="train" />
+    </div>
+    <p style="text-align: center">
+      <button id="start" class="button">Start</button>
+      <button id="stop" class="button">Stop</button>
+    </p>
+
+    <script>
+      var clouds = document.getElementById("clouds");
+      var cloud1 = clouds.children[0];
+      var cloud2 = clouds.children[1];
+      var cloud3 = clouds.children[2];
+      var train = document.getElementById("train");
+      var startButton = document.getElementById("start");
+      var stopButton = document.getElementById("stop");
+      var intervalId = null;
+
+      startButton.addEventListener("click", function () {
+        if (intervalId === null) {
+          intervalId = setInterval(function () {
+            cloud1.style.left = parseInt(cloud1.style.left) - 1 + "px";
+            cloud2.style.left = parseInt(cloud2.style.left) - 1 + "px";
+            cloud3.style.left = parseInt(cloud3.style.left) - 1 + "px";
+
+            if (parseInt(cloud1.style.left) < -200) {
+              cloud1.style.left = "300px";
+            }
+            if (parseInt(cloud2.style.left) < -200) {
+              cloud2.style.left = "300px";
+            }
+            if (parseInt(cloud3.style.left) < -200) {
+              cloud3.style.left = "300px";
+            }
+          }, 50);
+        }
+      });
+
+      stopButton.addEventListener("click", function () {
+        clearInterval(intervalId);
+        intervalId = null;
+      });
+    </script>
+  </body>
+</html>

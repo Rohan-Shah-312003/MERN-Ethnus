@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4</title>
+  </head>
+  <form action="">
+    <input type="submit" onclick="showDate()" value="show date" />
+    <p id="date"></p>
+    <input type="submit" onclick="showTime()" value="show time" />
+    <p id="time"></p>
+  </form>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Task 4</title>
-</head>
-<form action="">
-  <input type="submit" onclick="showDate()" value="show date">
-  <p id="date"></p>
-  <input type="submit" onclick="showTime()" value="show time">
-  <p id="time"></p>
-</form>
+  <body>
+    <script>
+      function showDate() {
+        const d = new Date();
+        document
+          .querySelector("form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
 
-<body>
-  <script>
-    function showDate() {
-      const d = new Date();
-      document.querySelector("form").addEventListener("submit", function (event) {
-        event.preventDefault();
+            document.getElementById("date").innerHTML =
+              d.getDate() +
+              "/" +
+              d.toLocaleDateString("default", { month: "long" }) +
+              "/" +
+              d.getFullYear();
+          });
+      }
 
-        document.getElementById("date").innerHTML = (d.getDate() + "/" + d.toLocaleDateString('default', { month: 'long' }) + "/" + d.getFullYear());
-      });
-    }
+      function showTime() {
+        const d = new Date();
+        const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        document
+          .querySelector("form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
 
-    function showTime() {
-      const d = new Date();
-      const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-      document.querySelector("form").addEventListener("submit", function (event) {
-        event.preventDefault();
+            // document.getElementById("time").innerHTML = (daysOfWeek[d.getDay()] + " " + d.toLocaleDateString('default', { month: 'short' }) + " " + d.getDate() + " " + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + " " + Intl.DateTimeFormat().resolvedOptions().timeZone);
 
-        document.getElementById("time").innerHTML = (daysOfWeek[d.getDay()] + " " + d.toLocaleDateString('default', { month: 'short' }) + " " + d.getDate() + " " + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + " " + Intl.DateTimeFormat().resolvedOptions().timeZone);
-      });
-    }
-  </script>
-</body>
-
+            document.getElementById("time").innerHTML =
+              d.toUTCString() + " (India Standard Time)";
+          });
+      }
+    </script>
+  </body>
 </html>

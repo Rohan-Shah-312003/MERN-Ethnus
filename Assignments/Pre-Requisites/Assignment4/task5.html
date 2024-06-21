@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+      }
+
+      .container {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="url"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+      }
+
+      textarea {
+        height: 100px;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      .error {
+        color: red;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Contact Form</h2>
+      <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <span class="error" id="nameError"></span>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <span class="error" id="emailError"></span>
+
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website" />
+        <span class="error" id="websiteError"></span>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <span class="error" id="messageError"></span>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      const form = document.getElementById("myForm");
+      const nameInput = document.getElementById("name");
+      const emailInput = document.getElementById("email");
+      const websiteInput = document.getElementById("website");
+      const messageInput = document.getElementById("message");
+      const nameError = document.getElementById("nameError");
+      const emailError = document.getElementById("emailError");
+      const websiteError = document.getElementById("websiteError");
+      const messageError = document.getElementById("messageError");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (nameInput.value.trim() === "") {
+          nameError.textContent = "This field is required";
+        } else {
+          nameError.textContent = "";
+        }
+
+        if (emailInput.value.trim() === "") {
+          emailError.textContent = "This field is required";
+        } else {
+          emailError.textContent = "";
+        }
+
+        if (websiteInput.value.trim() !== "") {
+          websiteError.textContent = "This field is required";
+        } else {
+          websiteError.textContent = "";
+        }
+
+        if (messageInput.value.trim() === "") {
+          messageError.textContent = "This field is required";
+        } else {
+          messageError.textContent = "";
+        }
+      });
+
+      if (
+        nameError.textContent === "" &&
+        emailError.textContent === "" &&
+        websiteError.textContent === "" &&
+        messageError.textContent === ""
+      ) {
+        alert("Form submitted successfully!");
+        form.reset();
+      }
+    </script>
+  </body>
+</html>
