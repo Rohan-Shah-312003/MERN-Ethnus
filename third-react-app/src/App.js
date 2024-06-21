@@ -1,14 +1,12 @@
 import "./App.css";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
-import Nav from "./components/Nav";
+import C1 from "./components/C1";
+import { C2 } from "./components/C2";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Nav />
-      <Footer />
+      <C1 name="Class component" />
+      <C2 name="Functional component" />
     </div>
   );
 }
