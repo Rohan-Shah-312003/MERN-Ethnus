@@ -1,6 +1,6 @@
-Author: Rohan Shah
-Purpose: MERN internship certification
-Navigation Map:
+- Author: Rohan Shah
+- Purpose: MERN internship certification
+- Navigation Map:
 
 - Assignments consists of the assignments
 

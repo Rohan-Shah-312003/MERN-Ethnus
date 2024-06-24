@@ -37,11 +37,7 @@
           .querySelector("form")
           .addEventListener("submit", function (event) {
             event.preventDefault();
-
-            // document.getElementById("time").innerHTML = (daysOfWeek[d.getDay()] + " " + d.toLocaleDateString('default', { month: 'short' }) + " " + d.getDate() + " " + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + " " + Intl.DateTimeFormat().resolvedOptions().timeZone);
-
-            document.getElementById("time").innerHTML =
-              d.toUTCString() + " (India Standard Time)";
+            document.getElementById("time").innerHTML = Date();
           });
       }
     </script>
