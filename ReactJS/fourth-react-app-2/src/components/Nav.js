@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+import { Link } from "react-router-dom";
 export default function Nav() {
   return (
     <div className="Navigation navbar bg-info px-4">
@@ -8,14 +8,14 @@ export default function Nav() {
 
       {/*<link to="/">Shopping</link>*/}
       <div className="nav ms-auto">
-        <a className="nav-link">First</a>
+        {/*<a className="nav-link">First</a>
         <a className="nav-link">Second</a>
         <a className="nav-link">Third</a>
-        <a className="nav-link">Fourth</a>
-        {/*<link to="/">Home</link>
-        <link to="/about">About</link>
-        <link to="/contact">Contact</link>
-        <link to="/team">Team</link>*/}
+        <a className="nav-link">Fourth</a>*/}
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="/team">Team</Link>
       </div>
       <button className="btn btn-success">Buy Now</button>
     </div>
