@@ -1,8 +1,3 @@
-const event = require("events");
-//
-const eventEmitter = new event.EventEmitter();
-//
-//
 //eventEmitter.on("f1", () => {
 //  console.log("Function is executed on the server")
 //});
@@ -24,6 +19,11 @@ const eventEmitter = new event.EventEmitter();
 //
 //eventEmitter.emit("connection");
 
+
+const event = require("events");
+
+const eventEmitter = new event.EventEmitter();
+
 const mongoose = require("mongoose");
 
 mongoose.connect("mongodb://127.0.0.1:27017/Entertainment");
@@ -35,4 +35,3 @@ db.on("open", () => {
 db.on("error", () => {
   console.log("Connection is unsuccesful");
 });
-
