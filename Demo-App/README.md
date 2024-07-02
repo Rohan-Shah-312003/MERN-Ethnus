@@ -2,7 +2,7 @@ Author: Rohan Shah
 Purpose: CRUD based Demo App 
 
 
-Steps:
+Steps For Backend:
 
   - Initiating package.json file using (npm init -y)
 
@@ -27,4 +27,6 @@ Steps:
 
   - Connecting the application to the router
 
-  -
+  - Displaying the database schema by connecting the application to the schema model
+
+  - Implementing CRUD application by performing POST, GET, PUT, DEL --- in the server (router)
