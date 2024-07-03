@@ -1,7 +1,6 @@
 const express = require("express");
 const schema = require("../model/schema");
 const mongoose = require("mongoose");
-
 const router = express.Router();
 
 // using promises for the schema functions (create, find, findByIdAndUpdate, etc) as they are not supported by the latest mongoose versions
