@@ -45,5 +45,6 @@ Steps for frontend:
 
   - Clearing off App.js and removing strict mode from index.js
 
-  - 
+  - Adding data from the frontend to the backend using axios.post("link for the backend which is having the POST route")
+  
   
