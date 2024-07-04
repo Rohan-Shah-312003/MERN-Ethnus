@@ -9,56 +9,53 @@
         <button
           class="btn-close"
           data-bs-dismiss="alert"
-          aria-label=""
-          Close></button>
-        <strong><% message.message %></strong>
+          aria-label="Close"></button>
+        <strong><%= message.message %></strong>
       </div>
       <% } %>
       <div class="table-responsive">
-        <% if (users !== "") { %>
+        <% if (users != "") { %>
         <table class="table table-striped text-center">
           <thead>
             <tr class="table-dark">
-              <th><% index %></th>
-              <th>
+              <th>#</th>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% users.forEach((row, index) => { %>
+            <tr class="align-middle">
+              <td><%= index + 1 %></td>
+              <td>
                 <img
                   src="<%= row.image %>"
                   width="50"
                   class="img-thumbnail"
-                  alt="" />
-              </th>
-              <th><% row.name %></th>
-              <th><% row.email %></th>
-              <th><% row.phone %></th>
-              <th><%  %></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% users.forEach((user) => { %>
-            <tr>
-              <td><%= user._id %></td>
-              <td>
-                <img
-                  src="<%= user.image %>"
-                  class="rounded-circle"
-                  style="width: 50px; height: 50px" />
+                  alt="User Image" />
               </td>
-              <td><%= user.name %></td>
-              <td><%= user.email %></td>
-              <td><%= user.phone %></td>
+              <td><%= row.name %></td>
+              <td><%= row.email %></td>
+              <td><%= row.phone %></td>
               <td>
-                <a href="/edit/<%= user._id %>" class="btn btn-sm btn-primary"
-                  >Edit</a
-                >
-                <a href="/delete/<%= user._id %>" class="btn btn-sm btn-danger"
-                  >Delete</a
-                >
+                <a href="/edit/<%= row._id %>" class="text-success"
+                  ><i class="fas fa-edit fa-lg mx-1"></i
+                ></a>
+              </td>
+              <td>
+                <a href="/delete/<%= row._id %>" class="text-danger"
+                  ><i class="fas fa-trash fa-lg mx-1"></i
+                ></a>
               </td>
             </tr>
             <% }); %>
           </tbody>
         </table>
-        <% } else { %
+        <% } else { %>
         <h1 class="text-center text-secondary mt-5">No Users Found</h1>
         <% } %>
       </div>

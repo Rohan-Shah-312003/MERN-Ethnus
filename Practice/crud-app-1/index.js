@@ -32,6 +32,8 @@ app.use(
   })
 );
 
+app.use(express.static("uploads"));
+
 app.use((req, res, next) => {
   res.locals.message = req.session.message;
   delete req.session.message;
@@ -40,7 +42,6 @@ app.use((req, res, next) => {
 
 // set template engine
 app.set("view engine", "ejs");
-
 
 // routes
 app.use("", router);
