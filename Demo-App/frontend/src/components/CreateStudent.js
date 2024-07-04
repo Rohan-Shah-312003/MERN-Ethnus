@@ -14,7 +14,7 @@ export default function CreateStudent() {
     axios
       .post("http://127.0.0.1:4000/routes/create-student", data)
       .then((result) => {
-        if (result.status === 200) {
+        if (result.status) {
           alert("New Record Added");
         } else {
           Promise.reject();

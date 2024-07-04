@@ -47,4 +47,5 @@ Steps for frontend:
 
   - Adding data from the frontend to the backend using axios.post("link for the backend which is having the POST route")
   
+  - Working with get request job in StudentList
   
