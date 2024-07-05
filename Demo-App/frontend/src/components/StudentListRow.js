@@ -1,6 +1,6 @@
 import Axios from "axios";
 import React from "react";
-
+import { Link } from "react-router-dom";
 export default function StudentListRow(props) {
   const { _id, name, email, regNo } = props.obj;
 
@@ -25,7 +25,9 @@ export default function StudentListRow(props) {
       <td>{email}</td>
       <td>{regNo}</td>
       <td className="d-flex justify-content-center">
-        <button className="btn btn-success fas fa-edit fa-2x">Edit</button>
+        <button className="btn btn-success fas fa-edit fa-2x">
+          <Link className="text-decoration-none text-light">Edit</Link>
+        </button>
         <button
           onClick={handleClick}
           className="btn btn-danger fas fa-trash fa-2x">
