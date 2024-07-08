@@ -26,7 +26,11 @@ export default function StudentListRow(props) {
       <td>{regNo}</td>
       <td className="d-flex justify-content-center">
         <button className="btn btn-success fas fa-edit fa-2x">
-          <Link className="text-decoration-none text-light">Edit</Link>
+          <Link
+            className="text-decoration-none text-light"
+            to={"/edit-student/" + _id}>
+            Edit
+          </Link>
         </button>
         <button
           onClick={handleClick}

@@ -1,6 +1,5 @@
 const RecipeModel = require("../models/Recipes");
 const express = require("express");
-const mongoose = require("mongoose");
 
 const recipesRouter = express.Router();
 

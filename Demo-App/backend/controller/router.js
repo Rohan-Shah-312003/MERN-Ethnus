@@ -34,7 +34,7 @@ router
   .route("/update-student/:id")
   .get((req, res) => {
     schema
-      .find(mongoose.Types.ObjectId(req.params.id))
+      .findById(mongoose.Types.ObjectId(req.params.id))
       .then((data) => {
         res.send(data);
       })
