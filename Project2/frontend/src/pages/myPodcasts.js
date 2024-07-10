@@ -6,45 +6,41 @@ import useGetUserID from "../hooks/useGetUserID";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/card.css";
 
-export default function SavedPodcasts() {
-  const [savedPodcasts, setSavedPodcasts] = useState([]);
+export default function MyPodcasts() {
+  const [podcasts, setPodcasts] = useState([]);
+  const [myPodcasts, setMyPodcasts] = useState([]);
+  // eslint-disable-next-line
   const [cookies, setCookies] = useCookies(["flag"]);
   const userID = useGetUserID();
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchSavedPodcast = async () => {
+    const fetchUploadedPodcast = async () => {
       try {
         const response = await Axios.get(
-          `https://podvibe-backend-e5rm.onrender.com/podcasts/savedpodcasts/${userID}`
+          "https://podvibe-backend-e5rm.onrender.com/podcasts"
         );
-        console.log("Fetch Saved Podcast Response:", response);
+        setPodcasts(response.data);
 
-        // Validate response structure
-        if (response.data && response.data.savedPodcasts) {
-          setSavedPodcasts(response.data.savedPodcasts);
-        } else {
-          console.error("Unexpected response structure:", response.data);
-        }
+        setMyPodcasts(
+          response.data.filter((podcast) => podcast.userOwner === userID)
+        );
       } catch (error) {
         console.error(error);
       }
     };
 
-    fetchSavedPodcast();
-  }, [userID]);
+    fetchUploadedPodcast();
+  }, [userID, myPodcasts]);
 
   const removePodcast = async (podcastID) => {
     try {
       const response = await Axios.delete(
-        `https://podvibe-backend-e5rm.onrender.com/podcasts/${podcastID}/${userID}`
+        `https://podvibe-backend-e5rm.onrender.com/podcasts/delete-podcasts/${podcastID}/${userID}`
       );
-      console.log("Remove Podcast Response:", response);
 
       if (response.status === 200) {
-        setSavedPodcasts(
-          savedPodcasts.filter((podcast) => podcast._id !== podcastID)
-        );
+        setPodcasts(podcasts.filter((podcast) => podcast._id !== podcastID));
       } else {
         console.error(
           "Failed to remove podcast:",
@@ -61,34 +57,48 @@ export default function SavedPodcasts() {
     navigate("/youtube", { state: { link } });
   };
 
+  const editPodcast = (podcastID) => {
+    try {
+      const podcast = myPodcasts.find((podcast) => podcast._id === podcastID);
+      console.log(podcast);
+      navigate("/editpodcasts", { state: { podcast } });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <h1
         style={{ color: "white", fontSize: "4.2rem" }}
         className="text-center ">
-        Saved Podcasts
+        My Podcasts
       </h1>
-      {!cookies.flag ? (
-        <p
-          style={{ color: "red", fontSize: "1.2rem" }}
-          className="bg-warning red">
-          <Link
-            style={{ color: "red", fontSize: "1.2rem" }}
-            className="nav-link "
-            to="/auth">
-            Login/Register to access this feature
-          </Link>
-        </p>
-      ) : (
-        <br></br>
-      )}
-      {!savedPodcasts ? (
-        <p style={{ color: "white", fontSize: "4.2rem" }}>No saved Podcasts</p>
-      ) : (
-        <br></br>
-      )}
+
       <div className="row">
-        {savedPodcasts.map((podcast) => (
+        {!cookies.flag ? (
+          <p
+            style={{ color: "red", fontSize: "1.2rem" }}
+            className="bg-warning red">
+            <Link
+              style={{ color: "red", fontSize: "1.2rem" }}
+              className="nav-link "
+              to="/auth">
+              Login/Register to access this feature
+            </Link>
+          </p>
+        ) : (
+          <br></br>
+        )}
+        {!podcasts ? (
+          <p style={{ color: "white", fontSize: "4.2rem" }}>
+            No uploaded Podcasts
+          </p>
+        ) : (
+          <br></br>
+        )}
+
+        {myPodcasts.map((podcast) => (
           <div className="card custom-card">
             <div key={podcast._id} className="card-body">
               <h5 className="card-title">{podcast.title}</h5>
@@ -102,18 +112,23 @@ export default function SavedPodcasts() {
               <p className="card-text">
                 <label className="card-label">Rating:</label> {podcast.rating}
               </p>
-              <div
-                className="btn-container"
-                onClick={() => removePodcast(podcast._id)}>
+              <div className="btn-container">
                 <button
                   className="btn btn-outline-primary p-2 m-2"
                   onClick={() => handleViewVideo(podcast.link)}>
-                  View Video
+                  View Podcast
                 </button>
+
                 <button
                   className="btn btn-outline-secondary p-2 m-2"
+                  onClick={() => editPodcast(podcast._id)}>
+                  Edit Podcast
+                </button>
+
+                <button
+                  className="btn btn-outline-danger p-2 m-2"
                   onClick={() => removePodcast(podcast._id)}>
-                  Unsave
+                  Delete Podcast
                 </button>
               </div>
             </div>

@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import useGetUserID from "../hooks/useGetUserID";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { Link } from "react-router-dom";
+
 export default function CreatePodcasts() {
-  const userID = useGetUserID();
   const navigator = useNavigate();
+  const location = useLocation();
+  const userID = useGetUserID();
+  const editPodcast = location.state;
+  // eslint-disable-next-line
   const [cookies, setCookies] = useCookies(["flag"]);
-  const [podcast, setPodcast] = useState({
+  const [podcast, setPodcast] = useState(editPodcast?.podcast || {
     title: "",
     genre: "",
     description: "",
@@ -19,32 +23,32 @@ export default function CreatePodcasts() {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-
-    setPodcast({
-      ...podcast,
+    setPodcast((prevPodcast) => ({
+      ...prevPodcast,
       [name]: value,
-    });
+    }));
   };
 
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      await Axios.post(
-        "https://podvibe-backend-e5rm.onrender.com/podcasts/",
-        podcast
-      );
-      alert("Podcast uploaded successfully");
+        await Axios.put(
+          `https://podvibe-backend-e5rm.onrender.com/podcasts/${editPodcast.podcast._id}`,
+          podcast
+        );
+        alert("Podcast updated successfully");
       navigator("/");
     } catch (error) {
       console.error(error);
     }
   };
+
   return (
     <div className="create-podcast container p-5 d-flex flex-column align-items-center ">
       <h1
         style={{ color: "ivory", fontSize: "4.2rem" }}
         className="text-center ">
-        Create Podcasts
+        Edit Podcast
       </h1>
 
       {!cookies.flag ? (
@@ -61,19 +65,39 @@ export default function CreatePodcasts() {
       ) : (
         <form className="bg-light d-flex flex-column w-50 " onSubmit={onSubmit}>
           <label htmlFor="title">Title</label>
-          <input type="text" name="title" id="title" onChange={handleChange} />
+          <input
+            type="text"
+            name="title"
+            id="title"
+            onChange={handleChange}
+            value={podcast.title}
+          />
 
           <label htmlFor="genre">Genre</label>
-          <input type="text" name="genre" id="genre" onChange={handleChange} />
+          <input
+            type="text"
+            name="genre"
+            id="genre"
+            onChange={handleChange}
+            value={podcast.genre}
+          />
 
           <label htmlFor="description">Description</label>
           <textarea
             id="description"
             name="description"
-            onChange={handleChange}></textarea>
+            onChange={handleChange}
+            value={podcast.description}
+          ></textarea>
 
           <label htmlFor="link">Link</label>
-          <input type="text" name="link" id="link" onChange={handleChange} />
+          <input
+            type="text"
+            name="link"
+            id="link"
+            onChange={handleChange}
+            value={podcast.link}
+          />
 
           <label htmlFor="rating">Rating</label>
           <input
@@ -81,11 +105,13 @@ export default function CreatePodcasts() {
             name="rating"
             id="rating"
             onChange={handleChange}
+            value={podcast.rating}
           />
 
-          <button type="submit">Upload Podcast</button>
+          <button type="submit">{editPodcast ? "Save Changes" : "Upload"}</button>
         </form>
       )}
     </div>
   );
 }
+

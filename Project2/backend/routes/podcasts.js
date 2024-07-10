@@ -79,6 +79,24 @@ podcastsRouter.delete("/:podcastID/:userID", async (req, res) => {
   }
 });
 
+
+// delete podcast from server
+podcastsRouter.delete("/delete-podcasts/:podcastID/:userID", async (req, res) => {
+  try {
+    const user = await UserModel.findById(req.params.userID);
+    const podcast = await PodcastModel.findByIdAndDelete(req.params.podcastID);
+
+    user.savedPodcasts = user.savedPodcasts.filter(
+      (savedPodcastID) => savedPodcastID.toString() !== podcast._id.toString()
+    );
+
+    await user.save();
+    res.json(podcast);
+  } catch (error) {
+    res.json(error);
+  }
+});
+
 // Update
 // Update podcast details
 podcastsRouter.put("/:podcastID", async (req, res) => {

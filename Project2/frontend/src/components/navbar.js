@@ -3,15 +3,18 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { NavLink, useNavigate } from "react-router-dom";
-import { FaHome, FaUser, FaHeart, FaSignOutAlt } from "react-icons/fa";
+import { FaHome, FaUser, FaHeart, FaSignOutAlt, FaBars } from "react-icons/fa";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Sidebar = styled.div`
   height: 100vh;
-  width: 250px;
   background-color: #252525;
   color: #fffff0;
   display: flex;
   flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
   align-items: flex-start; /* Align items to the left */
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -26,6 +29,11 @@ const LogoContainer = styled.div`
 const LogoText = styled.span`
   font-size: 24px;
   font-weight: bold;
+  color: #fffff0;
+  &:hover {
+    color: #252525;
+    transition: color 0.2s ease-in-out;
+  }
 `;
 const NavItem = styled(NavLink)`
   font-size: 18px;
@@ -34,10 +42,13 @@ const NavItem = styled(NavLink)`
   display: flex;
   align-items: center;
   text-decoration: none;
+  border-radius: 0px;
   margin-bottom: 20px; /* Add space between elements */
   &:hover {
     background-color: #f0f0f0;
-    transition: background-color 0.2s ease-in-out;
+    border-radius: 7px;
+    transition: background-color 0.3s ease-in-out;
+    padding: 10px;
   }
   &.active {
     font-weight: bold;
@@ -61,7 +72,18 @@ const Navbar = () => {
   return (
     <Sidebar>
       <LogoContainer>
-        <LogoText>PodVibe</LogoText>
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <LogoText>PodVibe</LogoText>
+            </div>
+            <div className="col-3">
+              <LogoText>
+                <FaBars />
+              </LogoText>
+            </div>
+          </div>
+        </div>
       </LogoContainer>
       <NavItem exact to="/" activeClassName="active">
         <Link
@@ -93,7 +115,19 @@ const Navbar = () => {
           <NavIcon>
             <FaHeart />
           </NavIcon>
-          Saved Podcast
+          Saved Podcasts
+        </Link>
+      </NavItem>
+
+      <NavItem to="/mypodcasts" activeClassName="active">
+        <Link
+          style={{ color: "white", fontSize: "1.2rem" }}
+          className="nav-link text-center d-flex flex-row"
+          to="/mypodcasts">
+          <NavIcon>
+            <FaHeart />
+          </NavIcon>
+          My Podcasts
         </Link>
       </NavItem>
 

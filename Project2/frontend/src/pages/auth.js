@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function auth() {
   return (
@@ -24,7 +25,10 @@ function Login() {
   // TODO: Fix alert for catch function
   const onSubmit = (event) => {
     event.preventDefault();
-    Axios.post("http://localhost:5500/auth/login", { username, password })
+    Axios.post("https://podvibe-backend-e5rm.onrender.com/auth/login", {
+      username,
+      password,
+    })
       .then((result) => {
         alert(result.data.message);
         setCookies("flag", result.data.flag);
@@ -63,7 +67,10 @@ function Register() {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    Axios.post("http://localhost:5500/auth/register", { username, password })
+    Axios.post("https://podvibe-backend-e5rm.onrender.com/auth/register", {
+      username,
+      password,
+    })
       .then((result) => {
         if (result.data) {
           alert("Registered successfully");
